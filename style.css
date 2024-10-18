@@ -43,7 +43,9 @@ body * {
 }
 
 #container {
-  width: 360px; /* largura definida no figma, altura segue os conteudos definidos */
+  width: 100%; /* largura definida no figma, altura segue os conteudos definidos */
+  max-width: 588px;
+
   margin: 56px auto auto; /*  */
   padding: 0px 24px;
 }
