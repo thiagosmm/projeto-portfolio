@@ -45,11 +45,12 @@ body * {
 #container {
   width: 100%; /* largura definida no figma, altura segue os conteudos definidos */
   max-width: 588px;
-
   margin: 56px auto auto; /*  */
   padding: 0px 24px;
 }
 
+
+/*  */
 #main-content {
   display: flex;
   flex-direction: column;
@@ -182,4 +183,13 @@ ul li a:hover {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --url-background: url(./assets/bg-desktop.jpg)
+  }
+  .light {
+    --url-background: url(./assets/bg-desktop-light.jpg)
+  }
 }
