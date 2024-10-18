@@ -1,0 +1,183 @@
+* {
+  /* aplica para toda a pagina */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* o tamanho do conteudo respeita o width definido */
+}
+
+:root {
+  /* variaveis aplicadas em todo o html */
+  --text-color: white;
+  --url-background: url(./assets/bg-mobile.jpg);
+  --border-links-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.2);
+  --icon-hover-color: rgba(255, 255, 255, 0.2);
+  --background-switch-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --url-background: url(./assets/bg-mobile-light.jpg);
+  --border-links-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --icon-hover-color: rgba(0, 0, 0, 0.1);
+  --background-switch-url: url(./assets/sun.svg);
+}
+
+body {
+  /*background-image: url(./assets/bg-mobile.jpg); imagem de fundo usando função url
+  background-repeat: no-repeat; imagem nao se repete 
+  background-position: top center; top: eixo y (topo da tela) center: eixo x
+  background-size: cover; cobre toda a area visivel */
+
+  /*background: color image repeat position/size; */
+  background: var(--url-background) no-repeat top center/cover;
+}
+
+body * {
+  /* seletor universal, aplica para todos os elementos dentro do body */
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px; /* largura definida no figma, altura segue os conteudos definidos */
+  margin: 56px auto auto; /*  */
+  padding: 0px 24px;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* profile */
+
+#profile {
+  text-align: center; /* 2 -> tambem é possivel alinhar pelo elemento pai */
+  padding: 24px;
+}
+
+#profile img {
+  /* img é um elemento inline, nao da pra aplicar margin -> transformar em block ou 2 */
+  /*display: block;*/
+  width: 112px;
+  /*margin: auto;*/
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+  position: relative; /* absoluto do filho RELATIVO ao pai */
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--background-switch-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--icon-hover-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+
+ul {
+  list-style: none; /* tira os pontinhos */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px 24px;
+
+  /* surface-color-dark-mode */
+  background: var(--surface-color);
+  /* stroke-color-dark-mode */
+  border: 1px solid var(--border-links-color);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background, 0.5s;
+}
+
+/* pseudo-selector - ativa quando passar o mouse por cima */
+ul li a:hover {
+  background: var(--background-links-color-hover);
+  border: 1px solid var(--text-color);
+}
+
+/* social links */
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+#social-links a:hover {
+  background: var(--icon-hover-color);
+}
+
+/* footer */
+
+#last-message {
+  padding: 24px 0;
+  text-align: center;
+}
+
+#last-message p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
