@@ -1,5 +1,5 @@
 ## Projeto
-site de portfólio
+site de portfólio (NÃO FINALIZADO)
 
 ## Tecnologias
 - HTML e CSS
